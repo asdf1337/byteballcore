@@ -335,7 +335,7 @@ function composeDataJoint(from_address, data, signer, callbacks){
 	composeContentJoint(from_address, "data", data, signer, callbacks);
 }
 
-function composeDedinitionTemplateJoint(from_address, arrDefinitionTemplate, signer, callbacks){
+function composeDefinitionTemplateJoint(from_address, arrDefinitionTemplate, signer, callbacks){
 	composeContentJoint(from_address, "definition_template", arrDefinitionTemplate, signer, callbacks);
 }
 
@@ -874,7 +874,8 @@ function composeAndSavePaymentJoint(arrFromAddresses, arrOutputs, signer, callba
 
 
 function getMessageIndexByPayloadHash(objUnit, payload_hash){
-	for (var i=0; i<objUnit.messages.length; i++)
+	for (
+		i=0; i<objUnit.messages.length; i++)
 		if (objUnit.messages[i].payload_hash === payload_hash)
 			return i;
 	throw Error("message not found by payload hash "+payload_hash);
@@ -891,7 +892,7 @@ exports.composePaymentJoint = composePaymentJoint;
 exports.composeDefinitionChangeJoint = composeDefinitionChangeJoint;
 exports.composeDataFeedJoint = composeDataFeedJoint;
 exports.composeDataJoint = composeDataJoint;
-exports.composeDedinitionTemplateJoint = composeDedinitionTemplateJoint;
+exports.composeDefinitionTemplateJoint = composeDefinitionTemplateJoint;
 exports.composePollJoint = composePollJoint;
 exports.composeVoteJoint = composeVoteJoint;
 exports.composeProfileJoint = composeProfileJoint;
